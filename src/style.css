@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    overflow: hidden;
+
+    background:
+            radial-gradient(
+                    circle at top,
+                    #fff6df,
+                    #f1dcc2
+            );
+
+    font-family: 'Patrick Hand', cursive;
+
+    image-rendering: auto;
+}
+
+/* Canvas */
+
+canvas {
+
+    border-radius: 18px;
+
+    border: 6px solid #5c4033;
+
+    box-shadow:
+            0 0 40px rgba(0,0,0,0.25),
+            0 0 120px rgba(255,255,255,0.15);
+
+    transition:
+            transform 0.2s ease,
+            box-shadow 0.2s ease;
+
+    animation:
+            paperFloat 4s ease-in-out infinite;
+}
+
+/* Hover */
+
+canvas:hover {
+
+    transform: scale(1.003);
+
+    box-shadow:
+            0 0 50px rgba(0,0,0,0.3),
+            0 0 140px rgba(255,255,255,0.18);
+}
+
+/* Paper breathing */
+
+@keyframes paperFloat {
+
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-3px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Soft vignette */
+
+body::after {
+
+    content: '';
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+            radial-gradient(
+                    circle,
+                    transparent 55%,
+                    rgba(0,0,0,0.18)
+            );
+
+    mix-blend-mode: multiply;
+}
+
+/* Paper grain */
+
+body::before {
+
+    content: '';
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.06;
+
+    background-image:
+            repeating-radial-gradient(
+                    circle at 0 0,
+                    #000 0,
+                    transparent 2px
+            );
+}

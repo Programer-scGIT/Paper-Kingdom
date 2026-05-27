@@ -1,0 +1,15 @@
+{
+  "name": "Paper Kingdom",
+  "short_name": "Paper",
+  "start_url": "/Paper-Kingdom/",
+  "display": "standalone",
+  "background_color": "#f8e9d0",
+  "theme_color": "#8b5a2b",
+  "icons": [
+    {
+      "src": "/Paper-Kingdom/assets/image.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ]
+}
